@@ -14,7 +14,6 @@ feedbackForm.addEventListener('input', throttle(onFormInput, 500));
 feedbackForm.addEventListener('submit', onFormSubmit);
 
 function onFormInput(event) {
-  console.log(event.target.value);
   formData[event.target.name] = event.target.value;
   localStorage.setItem(FORM_KEY, JSON.stringify(formData));
 }

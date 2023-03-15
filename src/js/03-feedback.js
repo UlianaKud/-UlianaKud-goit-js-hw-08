@@ -5,7 +5,6 @@ const emailInput = document.querySelector('input');
 const messageText = document.querySelector('textarea');
 const FORM_KEY = 'feedback-form-state';
 
-
 let formData = {};
 formFilling();
 
@@ -20,6 +19,9 @@ function onFormInput(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
+  if (emailInput.value === '' || messageText.value === '') {
+    return alert('Please fill in all the fields!');
+  }
   console.log({ ...formData });
   event.target.reset();
   localStorage.removeItem(FORM_KEY);
